@@ -165,6 +165,7 @@ __published:	// IDE-managed Components
 	TAdvGlassButton *btn_Clear_Bottom;
 	TLabel *lb_Setting_Title_Binaryfile;
 	TAdvSmoothSlider *sd_BinaryFile;
+	TAdvGlassButton *AdvGlassButton1;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
@@ -199,6 +200,7 @@ __published:	// IDE-managed Components
 	void __fastcall sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
           double Value);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall AdvGlassButton1Click(TObject *Sender);
 
 
 private:	// User declarations
@@ -217,6 +219,17 @@ public: // Basic Member Variables
 	bool m_bIsOnLogFile;
 	bool m_bIsSigned;
 	bool m_bIsOnBinaryFile;
+
+// Shared Memory
+	// 공유메모리 할당(SD)
+	CMySharedMemory		*m_sm;
+	// 공유메모리 포인터
+	TSharedMemory*		m_pData;
+	// 공유메모리 할당(SDR)
+	//CMySharedMemory2	*m_sm2;
+	// 공유메모리 포인터
+	//TSharedMemory2*		m_pData2;
+
 
 public: // Data Parsing
 	void __fastcall DisplayBufferDataIntoGrid(int _type);

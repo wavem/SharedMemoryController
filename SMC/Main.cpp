@@ -118,6 +118,8 @@ void __fastcall TFormMain::InitProgram() {
 	m_bIsOnBinaryFile = false;
 	m_bIsSigned = false;
 	m_fp_Log = NULL;
+	m_sm = NULL;
+	m_pData = NULL;
 
 	// Init Grids
 	InitGrids();
@@ -199,6 +201,12 @@ void __fastcall TFormMain::ExitProgram() {
 	if(m_Book) {
 		m_Book->release();
 		m_Book = NULL;
+	}
+
+	// Shared Memory
+	if(m_sm != NULL) {
+		delete m_sm;
+		m_sm = NULL;
 	}
 }
 //---------------------------------------------------------------------------
@@ -1447,3 +1455,23 @@ void __fastcall TFormMain::btn_Clear_BottomClick(TObject *Sender)
 	memo_Msg->Clear();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::AdvGlassButton1Click(TObject *Sender)
+{
+
+	if(m_sm == NULL) {
+		wstring strName = SM_NAME_DU_SD;
+		int nMemSize = sizeof(TSharedMemory);
+		// 공유메모리 생성
+		m_sm = new CMySharedMemory(strName);
+		m_sm->Create(nMemSize);
+		m_sm->Attach();
+
+		OutputDebugString(_Format(L"Shared Memory Name SD: %s , Size: %d byte", strName.c_str(), nMemSize).c_str());
+	}
+
+	m_pData = (TSharedMemory*)m_sm->GetData();
+
+}
+//---------------------------------------------------------------------------
+

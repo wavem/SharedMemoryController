@@ -893,6 +893,29 @@ object FormMain: TFormMain
             Version = '1.3.0.2'
             OnClick = btn_CreateClick
           end
+          object AdvGlassButton1: TAdvGlassButton
+            Left = 450
+            Top = 264
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'Create'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 12
+            Version = '1.3.0.2'
+            OnClick = AdvGlassButton1Click
+          end
         end
       end
       object TPage
