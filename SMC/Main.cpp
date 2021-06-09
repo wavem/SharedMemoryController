@@ -159,6 +159,12 @@ void __fastcall TFormMain::InitProgram() {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	ExitProgram();
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TFormMain::ExitProgram() {
 
 	// Delete Socket
@@ -1441,4 +1447,3 @@ void __fastcall TFormMain::btn_Clear_BottomClick(TObject *Sender)
 	memo_Msg->Clear();
 }
 //---------------------------------------------------------------------------
-

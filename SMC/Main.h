@@ -197,6 +197,7 @@ __published:	// IDE-managed Components
 	void __fastcall btn_Clear_BottomClick(TObject *Sender);
 	void __fastcall sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
           double Value);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 
 private:	// User declarations
