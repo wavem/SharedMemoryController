@@ -7,6 +7,7 @@
 #include "Define.h"
 #include "UdpSocketThread.h"
 #include <stdio.h>
+#include "MySharedMemory.h"
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
