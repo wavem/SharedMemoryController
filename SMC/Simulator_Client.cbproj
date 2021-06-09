@@ -149,6 +149,10 @@
             <DependentOn>Main.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <CppCompile Include="MySharedMemory.cpp">
+            <DependentOn>MySharedMemory.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Simulator_Client.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>

@@ -6,10 +6,6 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-
-
-
-
 extern bool _BitCheck(BYTE _src, int _bit) {
 	if(_bit < 8 && _bit >= 0)	return (_src >> _bit) & 0x01;
 	return false;

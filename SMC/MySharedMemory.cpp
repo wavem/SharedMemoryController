@@ -6,7 +6,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-#include "CommonFunction.h"
+#include "common_functions.h"
 #include <Windows.h>
 
 CMySharedMemory::CMySharedMemory(const wstring& sName)
